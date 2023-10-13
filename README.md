@@ -40,6 +40,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
+    <li><a href="#limitations-and-future-updates">Future Updates</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -88,6 +89,11 @@ To get a local copy up and running follow these simple example steps.
    ```sh
    npm run dev
    ```
+<!-- FUTURE IMPROVEMENTS -->
+## Limitations and Future Updates
+* Improve UI Layout and Design
+* Add randomizer for homepage
+  
 <!-- CONTACT -->
 ## Contact
 Project Link: [https://github.com/JordanLDavid/CharityFinder](https://github.com/JordanLDavid/CharityFinder)
