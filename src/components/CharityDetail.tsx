@@ -10,7 +10,6 @@ export const CharityDetail = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        
         if (id !== undefined) 
         {
             LookInStorage(id)

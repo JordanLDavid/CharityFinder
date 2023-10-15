@@ -35,7 +35,7 @@ const App = () => {
     <>
       <Routes>
         <Route path="/" element={<Navigation {... inputProps}/>}>
-          <Route index element={<Home />} />
+          <Route index element={<Home/>} />
           <Route path="charity/:id" element={<CharityDetail />} />
           <Route path="searchCharity/:cause" element={<SearchResult />} />
           <Route path="favorites" element={<Favorite />} />

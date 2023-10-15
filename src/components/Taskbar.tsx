@@ -27,7 +27,6 @@ export const Navigation = (props: SearchBarProp) => {
       <>
         <div style={style}>
           <Link onClick={onClickClear} to="/">HOME</Link>
-          <Link onClick={onClickClear} to="/shop">SHOP</Link>
           <input className="display:block mt-auto"onChange={(event)=>onChangeInput(event)}></input>
           { input.trim() === "" ? null : 
           (<div id="navbar-dropdown" className="w-full md:block md:w-auto flex flex-col">
