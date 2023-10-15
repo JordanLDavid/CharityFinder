@@ -58,7 +58,9 @@ export const CharityDetail = () => {
             <div className="flex">                
                 <div className="flow-left w-4/5 pt-2">
                     <img className="object-cover h-48 w-96" src={results.coverImageUrl}/>
-                    <img src={results.logoUrl}/>
+                    { (results.logoUrl !== undefined && results.logoUrl !== '' ?
+                        <img src={results.logoUrl}></img> : 
+                        <img src="../GenericIcon.png" width="48" height="48"/> )}
                     <h1>{results.name}</h1>
                     <h2>{results.location}</h2>
                     <p> {results.description}</p> <br/>

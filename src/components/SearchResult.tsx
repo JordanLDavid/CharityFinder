@@ -20,7 +20,9 @@ export const SearchResult = () => {
                 <ul className="columns-3">
                 {results?.nonprofits.map((data)=> 
                 <div>
-                    { (data.logoUrl !== undefined && data.logoUrl !== '' ?<img src={data.logoUrl}></img> : null )}
+                    { (data.logoUrl !== undefined && data.logoUrl !== '' ?
+                        <img src={data.logoUrl}></img> : 
+                        <img src="../GenericIcon.png" width="48" height="48"/> )}
                     <Link to={"/charity/"+data.ein}>{data.name}</Link>
                     <p>{data.location}</p>
                 </div>
