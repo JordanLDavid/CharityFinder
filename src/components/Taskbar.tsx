@@ -4,12 +4,10 @@ import { Link, Outlet } from 'react-router-dom';
 
 export const Navigation = (props: SearchBarProp) => {
     const style = {
-      display: 'flex',
       width: '100vw',
       backgroundColor: '#f3f4f6',
       padding: '20px',
-      gap: '20px',
-      height: '75px',
+      height: '60px',
     } as React.CSSProperties;
 
     const [input, setInput] = useState('');
@@ -25,18 +23,26 @@ export const Navigation = (props: SearchBarProp) => {
 
     return (
       <>
-        <div style={style}>
-          <Link onClick={onClickClear} to="/">HOME</Link>
-          <input className="display:block mt-auto"onChange={(event)=>onChangeInput(event)}></input>
-          { input.trim() === "" ? null : 
-          (<div id="navbar-dropdown" className="w-full md:block md:w-auto flex flex-col">
-          <ul className="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="searchFilterDropDown">
-            {props.filterData.map((data)=> <Link onClick={onClickClear} to={"/searchCharity/"+data} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{data}</Link>)}
-          </ul>
+        <nav style={style}>
+          <div className="container mx-auto items-start justify-left md:flex md:flex-wrap">
+          <div className="mr-4"> <Link onClick={onClickClear} to="/">HOME</Link></div>
+          <div className="relative flex-grow">
+            <input className="w-full h-full max-w-md" onChange={(event)=>onChangeInput(event)}></input>
+            { input.trim() === "" ? null : 
+            (<div className="bg-white grid grid-cols-3 gap-2 p-2 justify-left items-start max-h-48 overflow-y-auto w-full max-w-md">
+              {props.filterData.length === 0 ? <p>No causes found</p> :
+               props.filterData.map((data)=> <div key={data} >
+                                                 <Link onClick={onClickClear} to={"/searchCharity/"+data} 
+                                                 className="dark:hover:bg-gray-600 dark:hover:text-white">{data}</Link></div>)}
+
+              </div>
+            )}
           </div>
-          )}
-          <Link onClick={onClickClear} to="/Favorites">Favorites</Link>
-        </div>
+          <div className="items-center flex ml-4">
+            <Link onClick={onClickClear} to="/Favorites">Favorites</Link>
+          </div>
+          </div>
+        </nav>
         <Outlet />
       </>
     );

@@ -20,7 +20,7 @@ export const Favorite = () => {
             <div>
             <ul className="m-2 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-1">
             {results?.map((data)=> 
-            <div className="border border-solid border-gray-300 p-2 grid grid-rows-2">
+            <div key={data.ein} className="border border-solid border-gray-300 p-2 grid grid-rows-2">
               <div className="min-content items-center flex justify-center p-2">
                 { (data.logoUrl !== undefined && data.logoUrl !== '' ?
                   <img src={data.logoUrl}></img> : 

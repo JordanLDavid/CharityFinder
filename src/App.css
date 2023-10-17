@@ -40,3 +40,15 @@
 .read-the-docs {
   color: #888;
 }
+
+#navbar-dropdown {
+  position: absolute;
+  top: 100%; /* Position the dropdown below the input field */
+  left: 0;
+  width: 100%; /* Make it as wide as the parent container */
+  z-index: 1; /* Ensure it appears above the parent */
+  background: #fff; /* Set a background color */
+  border: 1px solid #ccc; /* Add some styling */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a drop shadow */
+  /* You can add more styles as needed */
+}
